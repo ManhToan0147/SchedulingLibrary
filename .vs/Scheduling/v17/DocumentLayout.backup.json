@@ -11,7 +11,19 @@
       "RelativeMoniker": "D:0:0:{820AA248-D9CE-4077-992A-75569B05CC42}|Scheduling\\Scheduling.csproj|solutionrelative:scheduling\\frmlichsudat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{820AA248-D9CE-4077-992A-75569B05CC42}|Scheduling\\Scheduling.csproj|d:\\my project\\scheduling\\scheduling\\frmdatphong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{820AA248-D9CE-4077-992A-75569B05CC42}|Scheduling\\Scheduling.csproj|d:\\my project\\scheduling\\scheduling\\frmlichsusudung.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{820AA248-D9CE-4077-992A-75569B05CC42}|Scheduling\\Scheduling.csproj|solutionrelative:scheduling\\frmlichsusudung.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{820AA248-D9CE-4077-992A-75569B05CC42}|Scheduling\\Scheduling.csproj|D:\\My Project\\Scheduling\\scheduling\\frmlichsusudung.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{820AA248-D9CE-4077-992A-75569B05CC42}|Scheduling\\Scheduling.csproj|solutionrelative:scheduling\\frmlichsusudung.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{820AA248-D9CE-4077-992A-75569B05CC42}|Scheduling\\Scheduling.csproj|d:\\my project\\scheduling\\scheduling\\frmthongtinphong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{820AA248-D9CE-4077-992A-75569B05CC42}|Scheduling\\Scheduling.csproj|solutionrelative:scheduling\\frmthongtinphong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{820AA248-D9CE-4077-992A-75569B05CC42}|Scheduling\\Scheduling.csproj|D:\\My Project\\Scheduling\\scheduling\\frmdatphong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{820AA248-D9CE-4077-992A-75569B05CC42}|Scheduling\\Scheduling.csproj|solutionrelative:scheduling\\frmdatphong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -21,14 +33,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{820AA248-D9CE-4077-992A-75569B05CC42}|Scheduling\\Scheduling.csproj|D:\\My Project\\Scheduling\\scheduling\\frmfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{820AA248-D9CE-4077-992A-75569B05CC42}|Scheduling\\Scheduling.csproj|solutionrelative:scheduling\\frmfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{820AA248-D9CE-4077-992A-75569B05CC42}|Scheduling\\Scheduling.csproj|D:\\My Project\\Scheduling\\scheduling\\frmlichsusudung.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{820AA248-D9CE-4077-992A-75569B05CC42}|Scheduling\\Scheduling.csproj|solutionrelative:scheduling\\frmlichsusudung.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{820AA248-D9CE-4077-992A-75569B05CC42}|Scheduling\\Scheduling.csproj|D:\\My Project\\Scheduling\\scheduling\\frmlichsusudung.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{820AA248-D9CE-4077-992A-75569B05CC42}|Scheduling\\Scheduling.csproj|solutionrelative:scheduling\\frmlichsusudung.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{820AA248-D9CE-4077-992A-75569B05CC42}|Scheduling\\Scheduling.csproj|D:\\My Project\\Scheduling\\scheduling\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -98,11 +102,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "frmTimKiem.cs",
               "DocumentMoniker": "D:\\My Project\\Scheduling\\Scheduling\\frmTimKiem.cs",
               "RelativeDocumentMoniker": "Scheduling\\frmTimKiem.cs",
@@ -115,14 +119,27 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "frmDatPhong.cs [Design]",
+              "DocumentIndex": 5,
+              "Title": "frmDatPhong.cs",
               "DocumentMoniker": "D:\\My Project\\Scheduling\\Scheduling\\frmDatPhong.cs",
               "RelativeDocumentMoniker": "Scheduling\\frmDatPhong.cs",
-              "ToolTip": "D:\\My Project\\Scheduling\\Scheduling\\frmDatPhong.cs [Design]",
-              "RelativeToolTip": "Scheduling\\frmDatPhong.cs [Design]",
+              "ToolTip": "D:\\My Project\\Scheduling\\Scheduling\\frmDatPhong.cs",
+              "RelativeToolTip": "Scheduling\\frmDatPhong.cs",
+              "ViewState": "AgIAAG4BAAAAAAAAAAAlwHoBAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-13T18:22:36.607Z",
+              "WhenOpened": "2025-09-09T16:07:53.882Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "frmLichSuSuDung.cs [Design]",
+              "DocumentMoniker": "D:\\My Project\\Scheduling\\Scheduling\\frmLichSuSuDung.cs",
+              "RelativeDocumentMoniker": "Scheduling\\frmLichSuSuDung.cs",
+              "ToolTip": "D:\\My Project\\Scheduling\\Scheduling\\frmLichSuSuDung.cs [Design]",
+              "RelativeToolTip": "Scheduling\\frmLichSuSuDung.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-13T15:31:56.433Z",
               "EditorCaption": " [Design]"
             },
             {
@@ -145,14 +162,39 @@
               "RelativeDocumentMoniker": "Scheduling\\frmLichSuDat.cs",
               "ToolTip": "D:\\My Project\\Scheduling\\Scheduling\\frmLichSuDat.cs",
               "RelativeToolTip": "Scheduling\\frmLichSuDat.cs",
-              "ViewState": "AgIAAGQAAAAAAAAAAAAYwB0CAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAANwBAAAAAAAAAAAtwD0BAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-13T17:18:54.341Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "frmLichSuSuDung.cs",
+              "DocumentMoniker": "D:\\My Project\\Scheduling\\Scheduling\\frmLichSuSuDung.cs",
+              "RelativeDocumentMoniker": "Scheduling\\frmLichSuSuDung.cs",
+              "ToolTip": "D:\\My Project\\Scheduling\\Scheduling\\frmLichSuSuDung.cs",
+              "RelativeToolTip": "Scheduling\\frmLichSuSuDung.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAAwCgAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-13T17:20:26.341Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 4,
+              "Title": "frmThongTinPhong.cs [Design]",
+              "DocumentMoniker": "D:\\My Project\\Scheduling\\Scheduling\\frmThongTinPhong.cs",
+              "RelativeDocumentMoniker": "Scheduling\\frmThongTinPhong.cs",
+              "ToolTip": "D:\\My Project\\Scheduling\\Scheduling\\frmThongTinPhong.cs [Design]",
+              "RelativeToolTip": "Scheduling\\frmThongTinPhong.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-18T08:19:25.211Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "frmFilter.cs [Design]",
               "DocumentMoniker": "D:\\My Project\\Scheduling\\Scheduling\\frmFilter.cs",
               "RelativeDocumentMoniker": "Scheduling\\frmFilter.cs",
@@ -163,31 +205,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "frmDatPhong.cs",
+              "DocumentIndex": 6,
+              "Title": "frmDatPhong.cs [Design]",
               "DocumentMoniker": "D:\\My Project\\Scheduling\\Scheduling\\frmDatPhong.cs",
               "RelativeDocumentMoniker": "Scheduling\\frmDatPhong.cs",
-              "ToolTip": "D:\\My Project\\Scheduling\\Scheduling\\frmDatPhong.cs",
-              "RelativeToolTip": "Scheduling\\frmDatPhong.cs",
-              "ViewState": "AgIAAG4BAAAAAAAAAAAlwHoBAAAZAAAAAAAAAA==",
+              "ToolTip": "D:\\My Project\\Scheduling\\Scheduling\\frmDatPhong.cs [Design]",
+              "RelativeToolTip": "Scheduling\\frmDatPhong.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-09T16:07:53.882Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-13T18:22:36.607Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "frmLichSuSuDung.cs [Design]",
-              "DocumentMoniker": "D:\\My Project\\Scheduling\\Scheduling\\frmLichSuSuDung.cs",
-              "RelativeDocumentMoniker": "Scheduling\\frmLichSuSuDung.cs",
-              "ToolTip": "D:\\My Project\\Scheduling\\Scheduling\\frmLichSuSuDung.cs [Design]",
-              "RelativeToolTip": "Scheduling\\frmLichSuSuDung.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-13T15:31:56.433Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\My Project\\Scheduling\\Scheduling\\Program.cs",
               "RelativeDocumentMoniker": "Scheduling\\Program.cs",
@@ -199,19 +229,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "frmLichSuSuDung.cs",
-              "DocumentMoniker": "D:\\My Project\\Scheduling\\Scheduling\\frmLichSuSuDung.cs",
-              "RelativeDocumentMoniker": "Scheduling\\frmLichSuSuDung.cs",
-              "ToolTip": "D:\\My Project\\Scheduling\\Scheduling\\frmLichSuSuDung.cs",
-              "RelativeToolTip": "Scheduling\\frmLichSuSuDung.cs",
-              "ViewState": "AgIAAE0BAAAAAAAAAAAAAH4BAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-13T17:20:26.341Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "UserSession.cs",
               "DocumentMoniker": "D:\\My Project\\Scheduling\\Scheduling\\UserSession.cs",
               "RelativeDocumentMoniker": "Scheduling\\UserSession.cs",
@@ -223,7 +241,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "Form1.cs",
               "DocumentMoniker": "D:\\My Project\\Scheduling\\Scheduling\\Form1.cs",
               "RelativeDocumentMoniker": "Scheduling\\Form1.cs",
@@ -235,7 +253,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "Form1.cs [Design]",
               "DocumentMoniker": "D:\\My Project\\Scheduling\\Scheduling\\Form1.cs",
               "RelativeDocumentMoniker": "Scheduling\\Form1.cs",
@@ -246,7 +264,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "frmSignIn.cs [Design]",
               "DocumentMoniker": "D:\\My Project\\Scheduling\\Scheduling\\frmSignIn.cs",
               "RelativeDocumentMoniker": "Scheduling\\frmSignIn.cs",
@@ -257,7 +275,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "frmFilter.cs",
               "DocumentMoniker": "D:\\My Project\\Scheduling\\Scheduling\\frmFilter.cs",
               "RelativeDocumentMoniker": "Scheduling\\frmFilter.cs",
@@ -269,7 +287,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "packages.config",
               "DocumentMoniker": "D:\\My Project\\Scheduling\\Scheduling\\packages.config",
               "RelativeDocumentMoniker": "Scheduling\\packages.config",
@@ -281,7 +299,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "frmThongTinPhong.cs",
               "DocumentMoniker": "D:\\My Project\\Scheduling\\Scheduling\\frmThongTinPhong.cs",
               "RelativeDocumentMoniker": "Scheduling\\frmThongTinPhong.cs",
@@ -289,11 +307,12 @@
               "RelativeToolTip": "Scheduling\\frmThongTinPhong.cs",
               "ViewState": "AgIAABoAAAAAAAAAAAASwDIAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-08T17:43:06.631Z"
+              "WhenOpened": "2025-10-08T17:43:06.631Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "frmSignIn.cs",
               "DocumentMoniker": "D:\\My Project\\Scheduling\\Scheduling\\frmSignIn.cs",
               "RelativeDocumentMoniker": "Scheduling\\frmSignIn.cs",
@@ -305,7 +324,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "UC_ThanhVien.cs",
               "DocumentMoniker": "D:\\My Project\\Scheduling\\Scheduling\\UC_ThanhVien.cs",
               "RelativeDocumentMoniker": "Scheduling\\UC_ThanhVien.cs",
@@ -317,7 +336,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "UC_ThanhVien.cs [Design]",
               "DocumentMoniker": "D:\\My Project\\Scheduling\\Scheduling\\UC_ThanhVien.cs",
               "RelativeDocumentMoniker": "Scheduling\\UC_ThanhVien.cs",
@@ -328,7 +347,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "Form1.Designer.cs",
               "DocumentMoniker": "D:\\My Project\\Scheduling\\Scheduling\\Form1.Designer.cs",
               "RelativeDocumentMoniker": "Scheduling\\Form1.Designer.cs",
@@ -340,7 +359,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 21,
               "Title": "SessionManager.cs",
               "DocumentMoniker": "D:\\My Project\\Scheduling\\Scheduling\\SessionManager.cs",
               "RelativeDocumentMoniker": "Scheduling\\SessionManager.cs",
@@ -352,7 +371,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 22,
               "Title": "DBConfig.cs",
               "DocumentMoniker": "D:\\My Project\\Scheduling\\Scheduling\\DBConfig.cs",
               "RelativeDocumentMoniker": "Scheduling\\DBConfig.cs",

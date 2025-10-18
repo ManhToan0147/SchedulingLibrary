@@ -38,15 +38,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvLichSuSuDung = new System.Windows.Forms.DataGridView();
-            this.btnCheckIn = new System.Windows.Forms.Button();
-            this.btnCheckOut = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnTabKhongDung = new System.Windows.Forms.Button();
-            this.btnTabDaHoanThanh = new System.Windows.Forms.Button();
-            this.btnTabDangSuDung = new System.Windows.Forms.Button();
-            this.btnTabChoCheckIn = new System.Windows.Forms.Button();
-            this.btnTabTatCa = new System.Windows.Forms.Button();
-            this.flowTabTrangThai = new System.Windows.Forms.FlowLayoutPanel();
             this.ma_dat_phong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dia_diem = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.thoi_gian = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,6 +47,16 @@
             this.nguoi_check_in = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.thoi_gian_check_out = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nguoi_check_out = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnCheckIn = new System.Windows.Forms.Button();
+            this.btnCheckOut = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnTabKhongDung = new System.Windows.Forms.Button();
+            this.btnTabDaHoanThanh = new System.Windows.Forms.Button();
+            this.btnTabDangSuDung = new System.Windows.Forms.Button();
+            this.btnTabChoCheckIn = new System.Windows.Forms.Button();
+            this.btnTabTatCa = new System.Windows.Forms.Button();
+            this.flowTabTrangThai = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnRefresh = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLichSuSuDung)).BeginInit();
             this.flowTabTrangThai.SuspendLayout();
             this.SuspendLayout();
@@ -108,139 +109,6 @@
             this.dgvLichSuSuDung.RowTemplate.Height = 50;
             this.dgvLichSuSuDung.Size = new System.Drawing.Size(2352, 622);
             this.dgvLichSuSuDung.TabIndex = 15;
-            // 
-            // btnCheckIn
-            // 
-            this.btnCheckIn.BackColor = System.Drawing.Color.LimeGreen;
-            this.btnCheckIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCheckIn.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCheckIn.ForeColor = System.Drawing.Color.White;
-            this.btnCheckIn.Location = new System.Drawing.Point(986, 858);
-            this.btnCheckIn.Name = "btnCheckIn";
-            this.btnCheckIn.Size = new System.Drawing.Size(504, 68);
-            this.btnCheckIn.TabIndex = 16;
-            this.btnCheckIn.Text = "CHECK IN";
-            this.btnCheckIn.UseVisualStyleBackColor = false;
-            this.btnCheckIn.Click += new System.EventHandler(this.btnCheckIn_Click);
-            // 
-            // btnCheckOut
-            // 
-            this.btnCheckOut.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnCheckOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCheckOut.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCheckOut.ForeColor = System.Drawing.Color.White;
-            this.btnCheckOut.Location = new System.Drawing.Point(986, 858);
-            this.btnCheckOut.Name = "btnCheckOut";
-            this.btnCheckOut.Size = new System.Drawing.Size(504, 68);
-            this.btnCheckOut.TabIndex = 23;
-            this.btnCheckOut.Text = "CHECK OUT";
-            this.btnCheckOut.UseVisualStyleBackColor = false;
-            this.btnCheckOut.Click += new System.EventHandler(this.btnCheckOut_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(55, 34);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(558, 38);
-            this.label1.TabIndex = 14;
-            this.label1.Text = "THÔNG TIN SỬ DỤNG PHÒNG THƯ VIỆN";
-            // 
-            // btnTabKhongDung
-            // 
-            this.btnTabKhongDung.BackColor = System.Drawing.Color.Black;
-            this.btnTabKhongDung.FlatAppearance.BorderSize = 0;
-            this.btnTabKhongDung.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTabKhongDung.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTabKhongDung.ForeColor = System.Drawing.Color.White;
-            this.btnTabKhongDung.Location = new System.Drawing.Point(876, 4);
-            this.btnTabKhongDung.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnTabKhongDung.Name = "btnTabKhongDung";
-            this.btnTabKhongDung.Size = new System.Drawing.Size(210, 52);
-            this.btnTabKhongDung.TabIndex = 21;
-            this.btnTabKhongDung.Text = "Không dùng";
-            this.btnTabKhongDung.UseVisualStyleBackColor = false;
-            this.btnTabKhongDung.Click += new System.EventHandler(this.btnTabKhongDung_Click);
-            // 
-            // btnTabDaHoanThanh
-            // 
-            this.btnTabDaHoanThanh.BackColor = System.Drawing.Color.Black;
-            this.btnTabDaHoanThanh.FlatAppearance.BorderSize = 0;
-            this.btnTabDaHoanThanh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTabDaHoanThanh.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTabDaHoanThanh.ForeColor = System.Drawing.Color.White;
-            this.btnTabDaHoanThanh.Location = new System.Drawing.Point(658, 4);
-            this.btnTabDaHoanThanh.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnTabDaHoanThanh.Name = "btnTabDaHoanThanh";
-            this.btnTabDaHoanThanh.Size = new System.Drawing.Size(210, 52);
-            this.btnTabDaHoanThanh.TabIndex = 20;
-            this.btnTabDaHoanThanh.Text = "Đã hoàn thành";
-            this.btnTabDaHoanThanh.UseVisualStyleBackColor = false;
-            this.btnTabDaHoanThanh.Click += new System.EventHandler(this.btnTabDaHoanThanh_Click);
-            // 
-            // btnTabDangSuDung
-            // 
-            this.btnTabDangSuDung.BackColor = System.Drawing.Color.Black;
-            this.btnTabDangSuDung.FlatAppearance.BorderSize = 0;
-            this.btnTabDangSuDung.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTabDangSuDung.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTabDangSuDung.ForeColor = System.Drawing.Color.White;
-            this.btnTabDangSuDung.Location = new System.Drawing.Point(440, 4);
-            this.btnTabDangSuDung.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnTabDangSuDung.Name = "btnTabDangSuDung";
-            this.btnTabDangSuDung.Size = new System.Drawing.Size(210, 52);
-            this.btnTabDangSuDung.TabIndex = 13;
-            this.btnTabDangSuDung.Text = "Đang sử dụng";
-            this.btnTabDangSuDung.UseVisualStyleBackColor = false;
-            this.btnTabDangSuDung.Click += new System.EventHandler(this.btnTabDangSuDung_Click);
-            // 
-            // btnTabChoCheckIn
-            // 
-            this.btnTabChoCheckIn.BackColor = System.Drawing.Color.Black;
-            this.btnTabChoCheckIn.FlatAppearance.BorderSize = 0;
-            this.btnTabChoCheckIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTabChoCheckIn.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTabChoCheckIn.ForeColor = System.Drawing.Color.White;
-            this.btnTabChoCheckIn.Location = new System.Drawing.Point(222, 4);
-            this.btnTabChoCheckIn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnTabChoCheckIn.Name = "btnTabChoCheckIn";
-            this.btnTabChoCheckIn.Size = new System.Drawing.Size(210, 52);
-            this.btnTabChoCheckIn.TabIndex = 12;
-            this.btnTabChoCheckIn.Text = "Chờ check in";
-            this.btnTabChoCheckIn.UseVisualStyleBackColor = false;
-            this.btnTabChoCheckIn.Click += new System.EventHandler(this.btnTabChoCheckIn_Click);
-            // 
-            // btnTabTatCa
-            // 
-            this.btnTabTatCa.BackColor = System.Drawing.Color.Black;
-            this.btnTabTatCa.FlatAppearance.BorderSize = 0;
-            this.btnTabTatCa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTabTatCa.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTabTatCa.ForeColor = System.Drawing.Color.White;
-            this.btnTabTatCa.Location = new System.Drawing.Point(4, 4);
-            this.btnTabTatCa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnTabTatCa.Name = "btnTabTatCa";
-            this.btnTabTatCa.Size = new System.Drawing.Size(210, 52);
-            this.btnTabTatCa.TabIndex = 22;
-            this.btnTabTatCa.Text = "Tất cả";
-            this.btnTabTatCa.UseVisualStyleBackColor = false;
-            this.btnTabTatCa.Click += new System.EventHandler(this.btnTabTatCa_Click);
-            // 
-            // flowTabTrangThai
-            // 
-            this.flowTabTrangThai.Controls.Add(this.btnTabTatCa);
-            this.flowTabTrangThai.Controls.Add(this.btnTabChoCheckIn);
-            this.flowTabTrangThai.Controls.Add(this.btnTabDangSuDung);
-            this.flowTabTrangThai.Controls.Add(this.btnTabDaHoanThanh);
-            this.flowTabTrangThai.Controls.Add(this.btnTabKhongDung);
-            this.flowTabTrangThai.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flowTabTrangThai.Location = new System.Drawing.Point(62, 100);
-            this.flowTabTrangThai.Margin = new System.Windows.Forms.Padding(0);
-            this.flowTabTrangThai.Name = "flowTabTrangThai";
-            this.flowTabTrangThai.Size = new System.Drawing.Size(1137, 61);
-            this.flowTabTrangThai.TabIndex = 24;
             // 
             // ma_dat_phong
             // 
@@ -331,12 +199,162 @@
             this.nguoi_check_out.Name = "nguoi_check_out";
             this.nguoi_check_out.Width = 235;
             // 
+            // btnCheckIn
+            // 
+            this.btnCheckIn.BackColor = System.Drawing.Color.LimeGreen;
+            this.btnCheckIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCheckIn.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCheckIn.ForeColor = System.Drawing.Color.White;
+            this.btnCheckIn.Location = new System.Drawing.Point(986, 858);
+            this.btnCheckIn.Name = "btnCheckIn";
+            this.btnCheckIn.Size = new System.Drawing.Size(504, 68);
+            this.btnCheckIn.TabIndex = 16;
+            this.btnCheckIn.Text = "CHECK IN";
+            this.btnCheckIn.UseVisualStyleBackColor = false;
+            this.btnCheckIn.Click += new System.EventHandler(this.btnCheckIn_Click);
+            // 
+            // btnCheckOut
+            // 
+            this.btnCheckOut.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnCheckOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCheckOut.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCheckOut.ForeColor = System.Drawing.Color.White;
+            this.btnCheckOut.Location = new System.Drawing.Point(986, 858);
+            this.btnCheckOut.Name = "btnCheckOut";
+            this.btnCheckOut.Size = new System.Drawing.Size(504, 68);
+            this.btnCheckOut.TabIndex = 23;
+            this.btnCheckOut.Text = "CHECK OUT";
+            this.btnCheckOut.UseVisualStyleBackColor = false;
+            this.btnCheckOut.Click += new System.EventHandler(this.btnCheckOut_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(55, 34);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(558, 38);
+            this.label1.TabIndex = 14;
+            this.label1.Text = "THÔNG TIN SỬ DỤNG PHÒNG THƯ VIỆN";
+            // 
+            // btnTabKhongDung
+            // 
+            this.btnTabKhongDung.BackColor = System.Drawing.Color.Black;
+            this.btnTabKhongDung.FlatAppearance.BorderSize = 0;
+            this.btnTabKhongDung.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTabKhongDung.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTabKhongDung.ForeColor = System.Drawing.Color.White;
+            this.btnTabKhongDung.Location = new System.Drawing.Point(876, 4);
+            this.btnTabKhongDung.Margin = new System.Windows.Forms.Padding(4);
+            this.btnTabKhongDung.Name = "btnTabKhongDung";
+            this.btnTabKhongDung.Size = new System.Drawing.Size(210, 52);
+            this.btnTabKhongDung.TabIndex = 21;
+            this.btnTabKhongDung.Text = "Không dùng";
+            this.btnTabKhongDung.UseVisualStyleBackColor = false;
+            this.btnTabKhongDung.Click += new System.EventHandler(this.btnTabKhongDung_Click);
+            // 
+            // btnTabDaHoanThanh
+            // 
+            this.btnTabDaHoanThanh.BackColor = System.Drawing.Color.Black;
+            this.btnTabDaHoanThanh.FlatAppearance.BorderSize = 0;
+            this.btnTabDaHoanThanh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTabDaHoanThanh.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTabDaHoanThanh.ForeColor = System.Drawing.Color.White;
+            this.btnTabDaHoanThanh.Location = new System.Drawing.Point(658, 4);
+            this.btnTabDaHoanThanh.Margin = new System.Windows.Forms.Padding(4);
+            this.btnTabDaHoanThanh.Name = "btnTabDaHoanThanh";
+            this.btnTabDaHoanThanh.Size = new System.Drawing.Size(210, 52);
+            this.btnTabDaHoanThanh.TabIndex = 20;
+            this.btnTabDaHoanThanh.Text = "Đã hoàn thành";
+            this.btnTabDaHoanThanh.UseVisualStyleBackColor = false;
+            this.btnTabDaHoanThanh.Click += new System.EventHandler(this.btnTabDaHoanThanh_Click);
+            // 
+            // btnTabDangSuDung
+            // 
+            this.btnTabDangSuDung.BackColor = System.Drawing.Color.Black;
+            this.btnTabDangSuDung.FlatAppearance.BorderSize = 0;
+            this.btnTabDangSuDung.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTabDangSuDung.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTabDangSuDung.ForeColor = System.Drawing.Color.White;
+            this.btnTabDangSuDung.Location = new System.Drawing.Point(440, 4);
+            this.btnTabDangSuDung.Margin = new System.Windows.Forms.Padding(4);
+            this.btnTabDangSuDung.Name = "btnTabDangSuDung";
+            this.btnTabDangSuDung.Size = new System.Drawing.Size(210, 52);
+            this.btnTabDangSuDung.TabIndex = 13;
+            this.btnTabDangSuDung.Text = "Đang sử dụng";
+            this.btnTabDangSuDung.UseVisualStyleBackColor = false;
+            this.btnTabDangSuDung.Click += new System.EventHandler(this.btnTabDangSuDung_Click);
+            // 
+            // btnTabChoCheckIn
+            // 
+            this.btnTabChoCheckIn.BackColor = System.Drawing.Color.Black;
+            this.btnTabChoCheckIn.FlatAppearance.BorderSize = 0;
+            this.btnTabChoCheckIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTabChoCheckIn.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTabChoCheckIn.ForeColor = System.Drawing.Color.White;
+            this.btnTabChoCheckIn.Location = new System.Drawing.Point(222, 4);
+            this.btnTabChoCheckIn.Margin = new System.Windows.Forms.Padding(4);
+            this.btnTabChoCheckIn.Name = "btnTabChoCheckIn";
+            this.btnTabChoCheckIn.Size = new System.Drawing.Size(210, 52);
+            this.btnTabChoCheckIn.TabIndex = 12;
+            this.btnTabChoCheckIn.Text = "Chờ check in";
+            this.btnTabChoCheckIn.UseVisualStyleBackColor = false;
+            this.btnTabChoCheckIn.Click += new System.EventHandler(this.btnTabChoCheckIn_Click);
+            // 
+            // btnTabTatCa
+            // 
+            this.btnTabTatCa.BackColor = System.Drawing.Color.Black;
+            this.btnTabTatCa.FlatAppearance.BorderSize = 0;
+            this.btnTabTatCa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTabTatCa.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTabTatCa.ForeColor = System.Drawing.Color.White;
+            this.btnTabTatCa.Location = new System.Drawing.Point(4, 4);
+            this.btnTabTatCa.Margin = new System.Windows.Forms.Padding(4);
+            this.btnTabTatCa.Name = "btnTabTatCa";
+            this.btnTabTatCa.Size = new System.Drawing.Size(210, 52);
+            this.btnTabTatCa.TabIndex = 22;
+            this.btnTabTatCa.Text = "Tất cả";
+            this.btnTabTatCa.UseVisualStyleBackColor = false;
+            this.btnTabTatCa.Click += new System.EventHandler(this.btnTabTatCa_Click);
+            // 
+            // flowTabTrangThai
+            // 
+            this.flowTabTrangThai.Controls.Add(this.btnTabTatCa);
+            this.flowTabTrangThai.Controls.Add(this.btnTabChoCheckIn);
+            this.flowTabTrangThai.Controls.Add(this.btnTabDangSuDung);
+            this.flowTabTrangThai.Controls.Add(this.btnTabDaHoanThanh);
+            this.flowTabTrangThai.Controls.Add(this.btnTabKhongDung);
+            this.flowTabTrangThai.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flowTabTrangThai.Location = new System.Drawing.Point(62, 100);
+            this.flowTabTrangThai.Margin = new System.Windows.Forms.Padding(0);
+            this.flowTabTrangThai.Name = "flowTabTrangThai";
+            this.flowTabTrangThai.Size = new System.Drawing.Size(1137, 61);
+            this.flowTabTrangThai.TabIndex = 24;
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnRefresh.FlatAppearance.BorderSize = 0;
+            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefresh.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefresh.ForeColor = System.Drawing.Color.White;
+            this.btnRefresh.Location = new System.Drawing.Point(2261, 109);
+            this.btnRefresh.Margin = new System.Windows.Forms.Padding(4);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(153, 52);
+            this.btnRefresh.TabIndex = 25;
+            this.btnRefresh.Text = "Refresh";
+            this.btnRefresh.UseVisualStyleBackColor = false;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
             // frmLichSuSuDung
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(2477, 961);
+            this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.flowTabTrangThai);
             this.Controls.Add(this.btnCheckOut);
             this.Controls.Add(this.btnCheckIn);
@@ -373,5 +391,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nguoi_check_in;
         private System.Windows.Forms.DataGridViewTextBoxColumn thoi_gian_check_out;
         private System.Windows.Forms.DataGridViewTextBoxColumn nguoi_check_out;
+        private System.Windows.Forms.Button btnRefresh;
     }
 }

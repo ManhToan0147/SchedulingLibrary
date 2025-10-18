@@ -22,16 +22,25 @@ namespace Scheduling
         {
             InitializeComponent();
             InitializeTabs();
-            UpdateTabCounts();
         }
 
         private void frmLichSuSuDung_Load(object sender, EventArgs e)
         {
+            AutoUpdateBookingStatus();
+            UpdateTabCounts();
             LoadDataAndUpdateUI();
             HighlightTab(btnTabTatCa);
 
             //Sua mau btn
             btnCheckIn.BackColor = Color.FromArgb(255, 157, 0); // Vàng cam
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            AutoUpdateBookingStatus();
+            UpdateTabCounts();
+            LoadDataAndUpdateUI();
+
         }
 
         // ========== KHỞI TẠO TAB THEO ROLE ==========
@@ -156,6 +165,8 @@ namespace Scheduling
                 string query = $@"
                     SELECT 
                         dp.ma_dat_phong,
+                        dp.ngay_dat,          -- THÊM
+                        dp.gio_bat_dau,    -- THÊM
                         CONCAT(p.dia_diem, ' - ', p.ten_phong) AS dia_diem,
                         CASE 
                             WHEN DATEPART(WEEKDAY, dp.ngay_dat) = 1 THEN N'Chủ Nhật'
@@ -222,6 +233,11 @@ namespace Scheduling
         // ========== SETUP BUTTONS VÀ ẨN/HIỆN CỘT ==========
         private void SetupButtonsByTabAndRole()
         {
+            // ✅ Ẩn 2 cột trong datagridview (2 cột này để so sánh chứ không view ra ngoài)
+            dgvLichSuSuDung.Columns["ngay_dat"].Visible = false;
+            dgvLichSuSuDung.Columns["gio_bat_dau"].Visible = false;
+
+
             // ✅ Ẩn button trước
             btnCheckIn.Visible = false;
             btnCheckOut.Visible = false;
@@ -291,6 +307,142 @@ namespace Scheduling
             }
         }
 
+        private void btnCheckIn_Click(object sender, EventArgs e)
+        {
+            if (dgvLichSuSuDung.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Vui lòng chọn bản ghi để check in!", "Thông báo");
+                return;
+            }
+
+            int success = 0;
+            int failed = 0;
+
+            foreach (DataGridViewRow row in dgvLichSuSuDung.SelectedRows)
+            {
+                if (row.IsNewRow) continue;
+
+                string maDatPhong = row.Cells["ma_dat_phong"].Value.ToString();
+                DateTime ngayDat = Convert.ToDateTime(row.Cells["ngay_dat"].Value);
+                TimeSpan gioBatDau = TimeSpan.Parse(row.Cells["gio_bat_dau"].Value.ToString());
+
+                // Kiểm tra khung 30 phút
+                if (!CanCheckIn(ngayDat, gioBatDau))
+                {
+                    failed++;
+                    continue;
+                }
+
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    string query = @"
+                        UPDATE Lich_su_su_dung
+                        SET trang_thai_su_dung = N'Đang sử dụng',
+                            thoi_gian_check_in = GETDATE(),
+                            nguoi_check_in = @NguoiCheckIn
+                        WHERE ma_dat_phong = @MaDatPhong
+                        AND trang_thai_su_dung = N'Chờ check in'";
+
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@MaDatPhong", maDatPhong);
+                        cmd.Parameters.AddWithValue("@NguoiCheckIn", UserSession.UserName);
+
+                        conn.Open();
+                        int rowsAffected = cmd.ExecuteNonQuery();
+
+                        if (rowsAffected > 0)
+                            success++;
+                        else
+                            failed++;
+                    }
+                }
+            }
+
+            // Thông báo kết quả
+            if (failed > 0)
+            {
+                MessageBox.Show(
+                    $"Thành công: {success} | Thất bại: {failed}\n" +
+                    "Chỉ được check-in trong khoảng 15 phút trước/sau giờ đặt.",
+                    "Kết quả check in",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning
+                );
+            }
+            else
+            {
+                MessageBox.Show($"Đã check in thành công {success} bản ghi!", "Thành công",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+            UpdateTabCounts();
+            LoadDataAndUpdateUI();
+        }
+
+        private bool CanCheckIn(DateTime ngayDat, TimeSpan gioBatDau)
+        {
+            // Thời điểm bắt đầu đặt phòng
+            DateTime startTime = ngayDat.Date + gioBatDau;
+
+            // Khoảng thời gian được check-in
+            DateTime checkInOpen = startTime.AddMinutes(-15);  // 15 phút trước
+            DateTime checkInClose = startTime.AddMinutes(15);   // 15 phút sau
+
+            DateTime now = DateTime.Now;
+
+            // Kiểm tra: hiện tại có nằm trong khoảng [checkInOpen, checkInClose] không?
+            return now >= checkInOpen && now <= checkInClose;
+        }
+
+        // ========== TỰ ĐỘNG CẬP NHẬT TRẠNG THÁI ==========
+        private void AutoUpdateBookingStatus()
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+
+                    // 1️⃣ Chuyển "Không dùng" nếu quá 15' chưa check-in
+                    string queryExpired = @"
+                        UPDATE lsd
+                        SET lsd.trang_thai_su_dung = N'Không dùng'
+                        FROM Lich_su_su_dung lsd
+                        JOIN Dat_phong dp ON lsd.ma_dat_phong = dp.ma_dat_phong
+                        WHERE lsd.trang_thai_su_dung = N'Chờ check in'
+                          AND lsd.thoi_gian_check_in IS NULL
+                          AND DATEADD(MINUTE, 15, 
+                                CAST(dp.ngay_dat AS DATETIME) + CAST(dp.gio_bat_dau AS DATETIME)
+                              ) < GETDATE()";
+
+                    using (SqlCommand cmd = new SqlCommand(queryExpired, conn))
+                    {
+                        cmd.ExecuteNonQuery();
+                    }
+
+                    // Tự động checkout nếu quá giờ kết thúc
+                    string queryAutoCheckout = @"
+                        UPDATE lsd
+                        SET lsd.trang_thai_su_dung = N'Đã hoàn thành',
+                            lsd.thoi_gian_check_out = CAST(dp.ngay_dat AS DATETIME) + CAST(dp.gio_ket_thuc AS DATETIME),
+                            lsd.nguoi_check_out = N'Hệ thống'
+                        FROM Lich_su_su_dung lsd
+                        JOIN Dat_phong dp ON lsd.ma_dat_phong = dp.ma_dat_phong
+                        WHERE lsd.trang_thai_su_dung = N'Đang sử dụng'
+                          AND CAST(dp.ngay_dat AS DATETIME) + CAST(dp.gio_ket_thuc AS DATETIME) < GETDATE()";
+
+                    using (SqlCommand cmd = new SqlCommand(queryAutoCheckout, conn))
+                    {
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine($"AutoUpdateBookingStatus error: {ex.Message}");
+            }
+        }
 
         private void btnCheckOut_Click(object sender, EventArgs e)
         {
@@ -336,48 +488,6 @@ namespace Scheduling
             LoadDataAndUpdateUI();
         }
 
-        private void btnCheckIn_Click(object sender, EventArgs e)
-        {
-            if (dgvLichSuSuDung.SelectedRows.Count == 0)
-            {
-                MessageBox.Show("Vui lòng chọn bản ghi để check in!", "Thông báo");
-                return;
-            }
 
-            int count = 0;
-            foreach (DataGridViewRow row in dgvLichSuSuDung.SelectedRows)
-            {
-                if (!row.IsNewRow)
-                {
-                    string maDatPhong = row.Cells["ma_dat_phong"].Value.ToString();
-
-                    using (SqlConnection conn = new SqlConnection(connectionString))
-                    {
-                        string query = @"
-                            UPDATE Lich_su_su_dung
-                            SET trang_thai_su_dung = N'Đang sử dụng',
-                                thoi_gian_check_in = GETDATE(),
-                                nguoi_check_in = @NguoiCheckIn
-                            WHERE ma_dat_phong = @MaDatPhong";
-
-                        using (SqlCommand cmd = new SqlCommand(query, conn))
-                        {
-                            cmd.Parameters.AddWithValue("@MaDatPhong", maDatPhong);
-                            cmd.Parameters.AddWithValue("@NguoiCheckIn", UserSession.UserName);
-
-                            conn.Open();
-                            cmd.ExecuteNonQuery();
-                        }
-                    }
-                    count++;
-                }
-            }
-
-            MessageBox.Show($"Đã check in thành công {count} bản ghi!", "Thành công",
-                MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-            UpdateTabCounts();
-            LoadDataAndUpdateUI();
-        }
     }
 }
