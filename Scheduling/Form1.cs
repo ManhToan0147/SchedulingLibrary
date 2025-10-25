@@ -202,7 +202,7 @@ namespace Scheduling
                 if (!string.IsNullOrEmpty(tenPhong))
                 {
                     frmThongTinPhong frmTTP = new frmThongTinPhong();
-                    frmTTP.LoadRoomEquipments(tenPhong);
+                    frmTTP.LoadRoomInfo(tenPhong);
                     frmTTP.Show(this);
                 }
 

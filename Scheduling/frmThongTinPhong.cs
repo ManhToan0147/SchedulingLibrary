@@ -21,35 +21,81 @@ namespace Scheduling
             InitializeComponent();
         }
 
-        public void LoadRoomEquipments(string tenPhong)
+        public void LoadRoomInfo(string tenPhong)
         {
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                string query = @"
-                    SELECT may_chieu, dieu_hoa, wifi, man_hinh, bang_kinh, suc_chua, dia_diem, loai_phong
-                    FROM dbo.Phong 
-                    WHERE ten_phong = @tenPhong";
-        
-                SqlCommand cmd = new SqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@tenPhong", tenPhong);
-        
                 conn.Open();
-                SqlDataReader reader = cmd.ExecuteReader();
-        
-                if (reader.Read())
-                {
-                    // ✅ Set trạng thái CheckBox
-                    chkWifi.Checked = reader["wifi"] != DBNull.Value && (bool)reader["wifi"];
-                    chkMayChieu.Checked = reader["may_chieu"] != DBNull.Value && (bool)reader["may_chieu"];
-                    chkDieuHoa.Checked = reader["dieu_hoa"] != DBNull.Value && (bool)reader["dieu_hoa"];
-                    chkManHinh.Checked = reader["man_hinh"] != DBNull.Value && (bool)reader["man_hinh"];
-                    chkBangKinh.Checked = reader["bang_kinh"] != DBNull.Value && (bool)reader["bang_kinh"];
 
-                    // ✅ Hiển thị thông tin
-                    lblDiaChi.Text = $"Thư viện Phạm Văn Đồng, {reader["dia_diem"]}";
-                    lblSucChua.Text = $"Sức chứa: {reader["suc_chua"]}";
-                    lblLoaiPhong.Text = $"{reader["loai_phong"]}";
-                    lblTenPhong.Text = tenPhong; // Hiển thị tên phòng
+                // Query thông tin phòng
+                string queryPhong = @"
+                    SELECT ten_phong, suc_chua, dia_diem, loai_phong
+                    FROM Phong
+                    WHERE ten_phong = @tenPhong";
+
+                using (SqlCommand cmd = new SqlCommand(queryPhong, conn))
+                {
+                    cmd.Parameters.AddWithValue("@tenPhong", tenPhong);
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            lblTenPhong.Text = reader["ten_phong"].ToString();
+                            lblDiaChi.Text = $"• Thư viện Phạm Văn Đồng, {reader["dia_diem"]}";
+                            lblSucChua.Text = $"Sức chứa: {reader["suc_chua"]}";
+                            lblLoaiPhong.Text = reader["loai_phong"].ToString();
+                        }
+                    }
+                }
+
+                // ✅ Query tiện ích
+                string queryTienIch = @"
+                    SELECT t.ten_tien_ich, tp.so_luong
+                    FROM TienIchPhong tp
+                    JOIN TienIch t ON tp.ma_tien_ich = t.ma_tien_ich
+                    JOIN Phong p ON tp.ma_phong = p.ma_phong
+                    WHERE p.ten_phong = @tenPhong";
+
+                flpTienIch.Controls.Clear(); // Clear FlowLayoutPanel
+
+                using (SqlCommand cmd = new SqlCommand(queryTienIch, conn))
+                {
+                    cmd.Parameters.AddWithValue("@tenPhong", tenPhong);
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (!reader.HasRows)
+                        {
+                            // Không có tiện ích
+                            var lblEmpty = new Label
+                            {
+                                Text = "Không có tiện ích",
+                                AutoSize = true,
+                                Font = new Font("Segoe UI", 10F),
+                                ForeColor = Color.Gray
+                            };
+                            flpTienIch.Controls.Add(lblEmpty);
+                        }
+                        else
+                        {
+                            while (reader.Read())
+                            {
+                                string tenTienIch = reader["ten_tien_ich"].ToString();
+                                string soLuong = reader["so_luong"].ToString(); 
+
+                                // ✅ Tạo Label cho từng tiện ích
+                                var lbl = new Label
+                                {
+                                    Text = $"• {tenTienIch}: {soLuong}",
+                                    AutoSize = true,
+                                    Font = new Font("Segoe UI", 10F),
+                                    Margin = new Padding(0, 0, 0, 7)
+                                };
+                                flpTienIch.Controls.Add(lbl);
+                            }
+                        }
+                    }
                 }
             }
         }

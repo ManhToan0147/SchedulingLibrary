@@ -19,3 +19,4 @@ D:\My Project\Scheduling\Scheduling\obj\Debug\Scheduling.frmLichSuDat.resources
 D:\My Project\Scheduling\Scheduling\obj\Debug\Scheduling.frmTimKiem.resources
 D:\My Project\Scheduling\Scheduling\obj\Debug\Scheduling.UC_ThanhVien.resources
 D:\My Project\Scheduling\Scheduling\obj\Debug\Scheduling.frmLichSuSuDung.resources
+D:\My Project\Scheduling\Scheduling\obj\Debug\Scheduling.exe.config
